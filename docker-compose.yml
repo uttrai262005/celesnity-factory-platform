@@ -1,0 +1,65 @@
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: celesnity
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d celesnity']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - celesnity-network
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/celesnity
+      API_PORT: '3001'
+    ports:
+      - '3001:3001'
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          'node -e "fetch(''http://localhost:3001/health'').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"',
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - celesnity-network
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    depends_on:
+      api:
+        condition: service_healthy
+    environment:
+      PORT: '3000'
+      API_BASE_URL: http://api:3001
+    ports:
+      - '3000:3000'
+    networks:
+      - celesnity-network
+
+networks:
+  celesnity-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

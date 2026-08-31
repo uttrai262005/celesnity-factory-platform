@@ -4,7 +4,7 @@ Update this file after every meaningful implementation change.
 
 ## Current Phase
 
-- Unit 01 complete — ready to begin Unit 02.
+- Unit 02 complete — ready to begin Unit 03.
 
 ## Current Goal
 
@@ -14,14 +14,19 @@ Update this file after every meaningful implementation change.
 
 - Unit 01: Monorepo setup - npm workspaces, empty NestJS health API, Prisma
   placeholder, and Next.js/Tailwind web shell verified.
+- Unit 02: Docker Compose skeleton - postgres + api + web service wiring,
+  Dockerfiles for both apps, Prisma migrate-deploy bootstrapping for the API
+  container, and all four runtime verification checks passed: startup,
+  API-to-Postgres service-name connectivity, web-to-API /health reachability,
+  and Postgres data persistence across a restart.
 
 ## In Progress
 
-- None yet.
+- None.
 
 ## Next Up
 
-- Unit 02: Docker Compose skeleton
+- Unit 03: Application API fixture
 
 ## Open Questions
 
