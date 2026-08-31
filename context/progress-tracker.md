@@ -4,7 +4,7 @@ Update this file after every meaningful implementation change.
 
 ## Current Phase
 
-- Not started — context files complete, ready to begin Unit 01.
+- Unit 01 complete — ready to begin Unit 02.
 
 ## Current Goal
 
@@ -12,7 +12,8 @@ Update this file after every meaningful implementation change.
 
 ## Completed
 
-- None yet.
+- Unit 01: Monorepo setup - npm workspaces, empty NestJS health API, Prisma
+  placeholder, and Next.js/Tailwind web shell verified.
 
 ## In Progress
 
@@ -20,7 +21,6 @@ Update this file after every meaningful implementation change.
 
 ## Next Up
 
-- Unit 01: Monorepo setup
 - Unit 02: Docker Compose skeleton
 
 ## Open Questions
