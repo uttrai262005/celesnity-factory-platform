@@ -4,7 +4,7 @@ Update this file after every meaningful implementation change.
 
 ## Current Phase
 
-- Unit 02 complete — ready to begin Unit 03.
+- Unit 03 complete — ready to begin Unit 04.
 
 ## Current Goal
 
@@ -19,6 +19,10 @@ Update this file after every meaningful implementation change.
   container, and all four runtime verification checks passed: startup,
   API-to-Postgres service-name connectivity, web-to-API /health reachability,
   and Postgres data persistence across a restart.
+- Unit 03: Application API fixture - standalone Express fixture server,
+  pagination across all four endpoints, failure-header simulation for timeout
+  and 500-once behavior, Docker Compose service wiring, and verification via
+  live curl checks.
 
 ## In Progress
 
@@ -26,7 +30,7 @@ Update this file after every meaningful implementation change.
 
 ## Next Up
 
-- Unit 03: Application API fixture
+- Unit 04: Application API collector
 
 ## Open Questions
 

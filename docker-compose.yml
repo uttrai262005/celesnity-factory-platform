@@ -57,6 +57,17 @@ services:
     networks:
       - celesnity-network
 
+  application-api-fixture:
+    build:
+      context: ./fixtures/application-api
+      dockerfile: Dockerfile
+    ports:
+      - '4010:4010'
+    environment:
+      PORT: '4010'
+    networks:
+      - celesnity-network
+
 networks:
   celesnity-network:
     driver: bridge
