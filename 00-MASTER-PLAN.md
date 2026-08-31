@@ -7,7 +7,7 @@ Deadline: **Chủ nhật 6/9/2026, 11:00 AM ICT** — còn 6 ngày kể từ hô
 Đây là Spec-driven Development, không phải vibe coding. Thứ tự bắt buộc:
 
 1. **Kiến trúc trước, code sau.** Toàn bộ 6 file context bên dưới phải viết xong và đọc lại 1 lượt trước khi mở Cursor gõ dòng code đầu tiên.
-2. **Cursor luôn đọc `.cursorrules` đầu tiên** mỗi phiên làm việc → nó trỏ tới 6 file trong `context/`.
+2. **Codex luôn đọc `AGENTS.md` đầu tiên** mỗi phiên làm việc → nó trỏ tới 6 file trong `context/`.
 3. **Mỗi feature = 1 spec file** trong `context/specs/`. Không code tính năng nào mà chưa có spec.
 4. **Sau mỗi unit**: cập nhật `progress-tracker.md`, chạy verify checklist, rồi mới sang unit tiếp theo.
 5. Khi Cursor đi lệch hướng → sửa **spec** hoặc **progress-tracker**, không sửa tay code rồi bỏ qua spec.
@@ -43,7 +43,7 @@ Thứ tự cắt giảm nếu cháy thời gian, cắt từ dưới lên:
 
 ```
 celesnity-factory-platform/
-├── .cursorrules                    ← entry point cho Cursor
+├── AGENTS.md                       ← entry point cho Codex
 ├── context/
 │   ├── project-overview.md
 │   ├── architecture.md
